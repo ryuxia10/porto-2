@@ -36,7 +36,7 @@ const Contact = () => {
 
       <form
         className="contact-form"
-        action="https://formspree.io/f/xxxxxxxx" // <-- Jangan lupa ganti ini dengan URL-mu
+        action="https://formspree.io/f/movlpyrl" // <-- Jangan lupa ganti ini dengan URL-mu
         method="POST"
       >
         {/* ... sisa form tidak berubah ... */}
