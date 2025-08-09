@@ -1,0 +1,113 @@
+/* src/games/vite-game/ViteGame.css */
+
+.vite-game-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ECE9D8;
+  padding: 1rem;
+}
+
+.preview-panel, .editor-panel {
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 1.5rem;
+  background-color: #DFDFDF;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-panel {
+  align-items: center;
+  justify-content: center;
+}
+
+.area-title-vite {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.preview-box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #555;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.preview-text {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+/* DIUBAH: Kotak info sekarang menjadi teks biasa yang menyatu */
+.vite-notice {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 1rem;
+  color: #333; /* Warna teks lebih jelas */
+  padding: 0 1rem; /* Padding horizontal agar tidak mepet */
+}
+
+.panel-title-vite {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.code-editor-vite {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  flex-grow: 1; /* Mengambil sisa ruang */
+
+  /* DITAMBAHKAN: Scrollbar jika meluap */
+  overflow-x: auto;
+}
+
+.code-editor-vite .code-yellow {
+  color: #e6db74;
+}
+
+.code-input {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  display: inline;
+  width: auto;
+  padding: 0;
+  border-bottom: 1px solid #777;
+}
+
+.code-input:focus {
+  border-bottom-color: #FFD700;
+}
+
+.code-input.code-string {
+  color: #a6e22e;
+  width: 100px;
+}
+
+.code-input.code-text {
+  color: #f8f8f2;
+  width: 100px;
+}

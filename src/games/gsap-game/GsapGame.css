@@ -1,0 +1,121 @@
+/* src/games/gsap-game/GsapGame.css */
+
+.gsap-game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border-radius: 0 0 6px 6px;
+}
+
+.arena-energi {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* WADAH UTAMA YANG DIAM DI TENGAH ARENA */
+.pokeball-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BOLA (YANG AKAN TERBANG) */
+.pokeball {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Pastikan bola di atas bayangan */
+}
+
+/* VISUAL BOLA, MENEMPEL DI DALAM .pokeball */
+.pokeball-visual {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(at 75% 15%,#fffb,#0000 35%),
+    radial-gradient(at 80% 40%,#0000,#0008),
+    radial-gradient(circle 5px,#fff 94%,#0000),
+    radial-gradient(circle 10px,#000 94%,#0000),
+    linear-gradient(#F93118 0 0) top /100% calc(50% - 5px),
+    linear-gradient(#fff 0 0) bottom/100% calc(50% - 5px)
+    #000;
+  background-repeat: no-repeat;
+  transform-origin: bottom;
+}
+
+/* ANIMASI GETAR HANYA UNTUK VISUAL BOLA, BUKAN BAYANGANNYA */
+.pokeball.shaking .pokeball-visual {
+  animation: l20 1s infinite cubic-bezier(0.5,120,0.5,-120);
+}
+
+/* BAYANGAN (DIAM DI BAWAH BOLA) */
+.pokeball-shadow {
+  position: absolute;
+  width: 80%;
+  height: 20%;
+  background: #000000;
+  opacity: 0.4;
+  border-radius: 50%;
+  filter: blur(5px);
+  bottom: -10px; /* Posisi di bawah bola */
+  z-index: 1;
+  transform-origin: center;
+}
+
+@keyframes l20 {
+  30%,70% { transform: rotate(0deg) }
+  49.99% { transform: rotate(0.2deg) }
+  50% { transform: rotate(-0.2deg) }
+}
+
+.pokeball-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 120, 0, 0) 70%);
+  filter: blur(15px);
+  z-index: 0; /* Di belakang bola dan bayangan */
+  opacity: 0.8;
+}
+
+/* ... (Sisa kode untuk panel kontrol tidak berubah) ... */
+.panel-kontrol-animasi {
+  background-color: #2e2e2e;
+  padding: 1rem 1.5rem;
+  border-top: 2px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.kontrol-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #fafafa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 180px;
+}
+.kontrol-grup label { font-size: 0.9rem; }
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; background: #555; border-radius: 5px; outline: none; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: #FFD700; cursor: pointer; border-radius: 50%; border: 2px solid #1a1a1a; }
+input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; background: #FFD700; cursor: pointer; border-radius: 50%; border: 2px solid #1a1a1a; }
+.easing-select { padding: 8px; background-color: #555; color: #fafafa; border: 1px solid #777; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }

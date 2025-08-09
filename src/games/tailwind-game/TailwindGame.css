@@ -1,0 +1,135 @@
+/* src/games/tailwind-game/TailwindGame.css */
+
+.tailwind-game-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.visual-panel-tailwind, .spellbook-panel {
+  background-color: #f0e6d2; /* Warna kain linen */
+  border: 2px solid #c8b89a; /* Warna benang */
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.visual-panel-tailwind {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.target-display, .game-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px dashed #c8b89a;
+  border-radius: 4px;
+}
+
+.area-title-tailwind {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  color: #8B4513;
+  margin: 0;
+}
+
+.spellbook-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title-tailwind {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #8B4513;
+  margin: 0 0 1rem 0;
+}
+
+.instructions-tailwind {
+  background-color: #fffbf2;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #c8b89a;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.class-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #c8b89a;
+  padding-bottom: 1.5rem;
+}
+
+.class-chip {
+  background-color: #8B4513;
+  color: #f0e6d2;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.class-chip.active {
+  background-color: #FFD700;
+  color: #4d2600;
+  border-color: #4d2600;
+}
+
+.class-chip:hover {
+  background-color: #4d2600;
+  transform: translateY(-2px);
+}
+
+.applied-classes {
+  margin-top: 1.5rem;
+  flex-grow: 1;
+}
+
+.applied-classes p {
+  font-weight: bold;
+  color: #8B4513;
+}
+
+.applied-class-list {
+  background-color: #fffbf2;
+  border: 1px solid #c8b89a;
+  border-radius: 4px;
+  min-height: 50px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+}
+
+.success-message-tailwind {
+  margin-top: 1rem;
+  text-align: center;
+  color: #00894d;
+  font-weight: bold;
+  animation: success-fade-in 0.5s ease-out;
+}
+
+@keyframes success-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

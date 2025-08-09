@@ -1,0 +1,37 @@
+/* src/components/ui/ShinyText.css */
+
+.shiny-text {
+  color: transparent;
+  background: linear-gradient(
+    120deg,
+    #BDBDBD 30%,
+    #FFFFFF 50%,
+    #BDBDBD 70%
+  );
+  
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.4),
+    0 0 25px rgba(255, 215, 0, 0.2);
+
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+
+  /* TAMBAHKAN SATU BARIS INI */
+  padding-bottom: 0.2em;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 150%;
+  }
+  100% {
+    background-position: -50%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}

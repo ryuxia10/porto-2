@@ -1,0 +1,42 @@
+/* src/components/ui/SpotlightText.css */
+
+.spotlight-text {
+  position: relative; /* Penting untuk pseudo-element ::before */
+  
+  /* Warna dasar teks diubah menjadi abu-abu terang yang elegan */
+  color: #BDBDBD; 
+  
+  /* Properti font dan lainnya akan diwariskan dari HeroUI.jsx */
+}
+
+.spotlight-text::before {
+  content: attr(data-text); /* Mengambil teks dari atribut data-text */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Gradien spotlight disesuaikan dengan tema "Api Alkemis" */
+  background: linear-gradient(90deg, #FF2400, #FF7800, #FFD700, #FF7800, #FF2400);
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  background-size: 200% 100%; /* Ukuran background diperbesar untuk animasi */
+
+  /* Ini adalah bagian "Spotlight" yang bergerak */
+  clip-path: ellipse(120px 120px at 0% 50%);
+  animation: spotlight-swing 4s infinite ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes spotlight-swing {
+  0% {
+    clip-path: ellipse(120px 120px at -10% 50%);
+  }
+  100% {
+    clip-path: ellipse(120px 120px at 110% 50%);
+  }
+}

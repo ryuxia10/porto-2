@@ -1,0 +1,126 @@
+/* src/components/showcase/ProjectCard.css */
+
+:root {
+  --card-width: 400px;
+  --card-height: calc(var(--card-width) * 9 / 16); /* Rasio 16:9 */
+}
+
+.project-card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+  perspective: 2500px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Lapisan paling bawah */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::after {
+  content: "";
+  width: 100%;
+  height: 120px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  background-image: linear-gradient( to bottom, transparent 20%, rgba(12, 13, 19, 0.5) 50%, rgba(12, 13, 19) 97% );
+}
+
+.project-card:hover .wrapper::after {
+  opacity: 1;
+}
+
+.title-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  /* DIUBAH: z-index menjadi 3 agar di atas karakter */
+  z-index: 3; 
+  width: calc(100% - 40px);
+  transition: transform 0.5s;
+}
+
+.project-card:hover .title-container {
+  transform: translate3d(0%, -40px, 100px);
+}
+
+.project-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  margin: 0;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+}
+
+.character {
+  /* DIUBAH: Ukuran width diperkecil */
+  width: 30%; 
+  max-width: 220px;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  /* DIUBAH: z-index menjadi 2, di antara background dan tulisan */
+  z-index: 2; 
+  right: -20px;
+  bottom: 0;
+}
+
+.project-card:hover .character {
+  opacity: 1;
+  transform: translate3d(-20%, -25%, 100px);
+}
+
+.project-card.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}

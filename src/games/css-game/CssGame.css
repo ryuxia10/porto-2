@@ -1,0 +1,132 @@
+/* src/games/css-game/CssGame.css */
+
+.css-game-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.visual-panel, .control-panel-css {
+  background-color: #F5DEB3; /* Warna perkamen */
+  border: 2px solid #8B4513;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.visual-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.target-area, .game-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-title {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-align: center;
+  color: #8B4513;
+  margin: 0 0 1rem 0;
+}
+
+.altar {
+  flex-grow: 1;
+  border: 2px dashed rgba(139, 69, 19, 0.5);
+  border-radius: 4px;
+  padding: 1rem;
+  background: rgba(0,0,0,0.1) url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238B4513' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3E%3C/g%3E%3C/svg%3E");
+  display: flex; /* Ini adalah properti yang akan kita ubah! */
+}
+
+/* Pola Target yang sudah benar */
+.altar.target {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.rune {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(147deg, #FFD700 0%, #FF8C00 74%);
+  border: 1px solid #4d2600;
+  border-radius: 8px;
+  color: #4d2600;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in-out; /* Untuk animasi perpindahan */
+}
+
+.control-panel-css {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title-css {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #8B4513;
+  margin: 0 0 1rem 0;
+}
+
+.instructions {
+  background-color: #FFF8DC;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.code-editor {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  flex-grow: 1;
+  white-space: pre-wrap;
+}
+
+.css-input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f8f8f2;
+  color: #f8f8f2;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100px;
+}
+
+.css-input:focus {
+  outline: none;
+  border-bottom: 1px solid #FFD700;
+}
+
+/* DITAMBAHKAN: Style untuk pesan kemenangan */
+.success-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #00894d;
+  font-weight: bold;
+  animation: success-fade-in 0.5s ease-out;
+}
+
+@keyframes success-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

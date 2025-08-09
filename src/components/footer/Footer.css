@@ -1,0 +1,118 @@
+/* src/components/footer/Footer.css */
+
+.footer {
+  --footer-background: #FF4500; /* Warna Oranye Api */
+  z-index: 10;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+}
+
+/* Bagian Gelembung Ajaib */
+.footer .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: var(--footer-background);
+  filter: url("#blob");
+}
+
+.footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+             bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
+
+/* Bagian Konten Footer */
+.footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  padding-top: 4rem;
+  background: var(--footer-background);
+}
+
+.footer a, .footer p {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer b {
+  color: white;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.footer .footer-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.footer .footer-links > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .footer-links > div > a {
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+.footer .footer-links > div > a:hover {
+  color: white;
+}
+
+.footer .footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer .social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2rem;
+}
+
+.footer .social-icons a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.1) translateY(-3px);
+  color: white;
+}

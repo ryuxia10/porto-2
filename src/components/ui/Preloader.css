@@ -1,0 +1,62 @@
+/* src/components/ui/Preloader.css */
+
+.preloader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: #0a0a0a;
+  z-index: 999;
+  /* TAMBAHKAN INI UNTUK ANIMASI FADE OUT */
+  transition: opacity 0.5s ease-out;
+}
+
+/* KELAS BARU UNTUK STATE FADE OUT */
+.preloader-container.fading-out {
+  opacity: 0;
+}
+
+.preloader-symbol {
+  font-size: 4rem;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 120, 0, 0.5);
+  animation: preloader-pulse 2s infinite ease-in-out;
+  margin-bottom: 2rem;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.progress-bar-container {
+  width: 250px;
+  height: 4px;
+  background-color: rgba(255, 215, 0, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FF7800 0%, #FFD700 100%);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.progress-text {
+  margin-top: 1rem;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: #FFD700;
+  opacity: 0.8;
+}

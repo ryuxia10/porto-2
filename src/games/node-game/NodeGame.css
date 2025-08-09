@@ -1,0 +1,134 @@
+/* src/games/node-game/NodeGame.css */
+
+.node-game-container {
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.scrying-mirror {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px; /* Ruang untuk scrollbar */
+  margin-bottom: 1rem;
+}
+
+/* Styling untuk scrollbar */
+.scrying-mirror::-webkit-scrollbar {
+  width: 8px;
+}
+.scrying-mirror::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+.scrying-mirror::-webkit-scrollbar-thumb {
+  background-color: #FFD700;
+  border-radius: 4px;
+  border: 2px solid #1a1a1a;
+}
+
+.message {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  animation: message-fade-in 0.5s ease-out;
+}
+
+@keyframes message-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message .speaker {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.message.oracle .speaker {
+  color: #FFD700; /* Emas */
+}
+
+.message.oracle p {
+  color: #00FF00; /* Hijau fosfor */
+  white-space: pre-wrap; /* Agar spasi dan baris baru dihormati */
+}
+
+/* DITAMBAHKAN: Style untuk pesan "berpikir" */
+.message.oracle .thinking-dots span {
+  animation: blink 1.4s infinite both;
+  color: #00FF00;
+}
+
+.message.oracle .thinking-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.message.oracle .thinking-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.message.user .speaker {
+  color: #87CEEB; /* Biru langit */
+  text-align: right;
+}
+
+.message.user p {
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: #fafafa;
+  text-align: right;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+.question-input {
+  flex-grow: 1;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fafafa;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.question-input:focus {
+  outline: none;
+  border-color: #FFD700;
+}
+
+.send-button {
+  background-color: #FFD700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.send-button:hover {
+  background-color: #ffed8a;
+}

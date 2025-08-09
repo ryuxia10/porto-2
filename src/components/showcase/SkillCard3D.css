@@ -1,0 +1,168 @@
+/* src/components/showcase/SkillCard3D.css */
+
+.parent {
+  width: 290px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #4d2600 0%, #000000 100%);
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: rgba(255, 120, 0, 0.2) 0px 50px 25px -40px, rgba(255, 69, 0, 0.2) 0px 25px 25px -5px;
+  will-change: transform, box-shadow;
+}
+
+.glass {
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 8px;
+  border-radius: 55px;
+  border-top-right-radius: 100%;
+  background: linear-gradient(0deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.25) 100%);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transform: translate3d(0px, 0px, 25px);
+  border-left: 1px solid rgba(255, 215, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.bottom {
+  padding: 10px 12px;
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 0, 26px);
+}
+
+/* ... (Sisa kode CSS di bawah ini tidak ada yang berubah, biarkan seperti adanya) ... */
+.social-buttons-container {
+  display: flex;
+  gap: 10px;
+  transform-style: preserve-3d;
+}
+
+.social-button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: rgba(255, 215, 0, 0.8);
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(255, 69, 0, 0.5) 0px 7px 5px -5px;
+  color: #4d2600;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+.social-button:first-child { transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s; }
+.social-button:nth-child(2) { transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s; }
+.social-button:nth-child(3) { transition: transform 0.2s ease-in-out 0.8s, box-shadow 0.2s ease-in-out 0.8s; }
+.social-button:nth-child(4) { transition: transform 0.2s ease-in-out 1.0s, box-shadow 0.2s ease-in-out 1.0s; }
+
+.social-button:hover { 
+  background: #FFD700; 
+  color: black; 
+  animation: jello-forward 0.8s both;
+}
+
+.social-button:active { background: #FF4500; color: white; }
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(5px);
+  color: #FFD700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: rgba(10, 10, 10, 0.8);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  border-right: 1px solid rgba(255, 215, 0, 0.3);
+  transform: rotate(45deg);
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.social-button:hover .tooltip {
+  top: -40px;
+  opacity: 1;
+}
+
+.logo {
+  position: absolute; right: 0; top: 0; transform-style: preserve-3d;
+}
+.logo .circle {
+  display: block; position: absolute; aspect-ratio: 1; border-radius: 50%; top: 0; right: 0;
+  box-shadow: rgba(255, 120, 0, 0.2) -10px 10px 20px 0px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(255, 120, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.logo .circle1 { width: 170px; transform: translate3d(0, 0, 20px); top: 8px; right: 8px; }
+.logo .circle2 { width: 140px; transform: translate3d(0, 0, 40px); top: 10px; right: 10px; transition-delay: 0.4s; }
+.logo .circle3 { width: 110px; transform: translate3d(0, 0, 60px); top: 17px; right: 17px; transition-delay: 0.8s; }
+.logo .circle4 { width: 80px; transform: translate3d(0, 0, 80px); top: 23px; right: 23px; transition-delay: 1.2s; }
+.logo .circle5 {
+  width: 50px; transform: translate3d(0, 0, 100px); top: 30px; right: 30px;
+  display: grid; place-content: center; transition-delay: 1.6s;
+  color: white; font-size: 24px;
+}
+
+.parent:hover .card {
+  transform: rotate3d(1, 1, 0, 30deg);
+  box-shadow: rgba(255, 69, 0, 0.3) 30px 50px 25px -40px, rgba(255, 120, 0, 0.1) 0px 25px 30px 0px;
+}
+
+.parent:hover .card .bottom .social-button {
+  transform: translate3d(0, 0, 50px);
+  box-shadow: rgba(255, 69, 0, 0.2) -5px 20px 10px 0px;
+}
+
+.parent:hover .card .logo .circle2 { transform: translate3d(0, 0, 60px); }
+.parent:hover .card .logo .circle3 { transform: translate3d(0, 0, 80px); }
+.parent:hover .card .logo .circle4 { transform: translate3d(0, 0, 100px); }
+.parent:hover .card .logo .circle5 { transform: translate3d(0, 0, 120px); }
+
+@keyframes jello-forward {
+  0% { transform: translate3d(0, 0, 50px) scale3d(1, 1, 1); }
+  30% { transform: translate3d(0, 0, 50px) scale3d(0.75, 1.25, 1); }
+  40% { transform: translate3d(0, 0, 50px) scale3d(1.25, 0.75, 1); }
+  50% { transform: translate3d(0, 0, 50px) scale3d(0.85, 1.15, 1); }
+  65% { transform: translate3d(0, 0, 50px) scale3d(1.05, 0.95, 1); }
+  75% { transform: translate3d(0, 0, 50px) scale3d(0.95, 1.05, 1); }
+  100% { transform: translate3d(0, 0, 50px) scale3d(1, 1, 1); }
+}

@@ -1,0 +1,68 @@
+/* src/components/prank/PrankButton.css */
+
+.prank-container {
+  width: 100%;
+  height: 50vh;
+  background: #ff4500;
+  position: relative;
+  overflow: hidden;
+  border-top: 0px solid #333;
+}
+
+.prank-button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+  background: linear-gradient(147deg, #FFD700 0%, #FF8C00 74%);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.5s, filter 0.5s;
+  white-space: nowrap;
+}
+
+.prank-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.prank-button.disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+/* ATURAN INI YANG PALING PENTING */
+.prank-screen {
+  position: fixed; /* Memakunya ke layar */
+  inset: 0; /* Mengisi seluruh layar (top:0, right:0, bottom:0, left:0) */
+  background-color: #000000; /* Latar hitam pekat */
+  z-index: 2000; /* Memastikannya di lapisan paling atas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.prank-text {
+  color: #00FF00;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #00FF00;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+.video-container {
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}

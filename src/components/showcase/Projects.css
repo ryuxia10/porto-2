@@ -1,0 +1,7 @@
+/* src/components/showcase/Projects.css */
+
+.projects-container {
+  position: relative;
+  /* Beri tinggi minimal agar tidak aneh saat transisi */
+  min-height: 500px; 
+}

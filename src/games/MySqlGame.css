@@ -1,0 +1,127 @@
+/* src/games/MySqlGame.css */
+
+.mysql-game-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.game-panel {
+  background-color: #F5DEB3; /* Warna perkamen */
+  border: 2px solid #8B4513; /* Coklat tua */
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #8B4513;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.table-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #8B4513; /* Diberi warna juga agar konsisten */
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.columns label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* DITAMBAHKAN: Warna teks tinta coklat */
+  color: #8B4513;
+}
+
+.query-builder {
+  flex-grow: 1;
+}
+
+.query-line {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.sql-keyword {
+  color: #0000FF; /* Biru */
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.sql-value {
+  color: #800080; /* Ungu */
+}
+
+.sql-filter {
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid #8B4513;
+  background-color: #FFF8DC; /* Cornsilk */
+  border-radius: 4px;
+  /* DITAMBAHKAN: Warna teks tinta coklat */
+  color: #8B4513;
+}
+
+.brew-button {
+  background: linear-gradient(147deg, #FFD700 0%, #FF8C00 74%);
+  border: 2px solid #8B4513;
+  border-radius: 6px;
+  color: #4d2600;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px #8B4513;
+  transition: all 0.1s ease-in-out;
+  align-self: center;
+}
+
+.brew-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #8B4513;
+}
+
+.result-box {
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00FF00; /* Hijau fosfor */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  overflow-y: auto;
+}
+
+.result-box:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.result-title {
+  color: #FFD700;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.8rem;
+  margin: 0;
+}

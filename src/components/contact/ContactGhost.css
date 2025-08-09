@@ -1,0 +1,145 @@
+/* src/components/contact/ContactGhost.css */
+
+/* ================================================================== */
+/* BAGIAN 1: POSISI & WADAH KESELURUHAN (Yang bisa kita pindah-pindah) */
+/* ================================================================== */
+
+.casper-container {
+  width: 180px;
+  height: 250px;
+  position: absolute;
+  bottom: 12rem;
+  z-index: 10;
+  cursor: pointer;
+  /* Transisi untuk perpindahan posisi dan fade */
+  transition: all 0.5s ease-in-out;
+}
+
+.casper-container.right {
+  right: 5rem;
+}
+
+.casper-container.left {
+  left: 5rem;
+}
+
+.casper-container.vanished {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+
+/* ================================================================== */
+/* BAGIAN 2: BENTUK & TAMPILAN CASPER (Yang sudah terkunci & tidak diubah) */
+/* ================================================================== */
+
+.casper-body {
+  width: 100%;
+  height: 80%;
+  animation: floaty 2s infinite;
+}
+
+.casper-body .body {
+  position: relative;
+  margin: 0 auto;
+  width: 180px;
+  height: 220px;
+  background: #f2fbf1;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+}
+
+.casper-body .body:before,
+.casper-body .body:after {
+  content: '';
+  position: absolute;
+  top: 130px;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f2fbf1;
+  animation: floaty .2s infinite;
+}
+
+.casper-body .body:before {
+  left: -18px;
+}
+
+.casper-body .body:after {
+  right: -18px;
+}
+
+.casper-body .body .eyes {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 75px 0 0;
+  width: 90px;
+  height: 20px;
+}
+
+.casper-body .body .eyes:before,
+.casper-body .body .eyes:after {
+  content: ' ';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #252c49;
+  border-radius: 50%;
+}
+
+.casper-body .body .mouth {
+  background: #252c49;
+  margin: 45px auto 0;
+  width: 60px;
+  height: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.casper-body .body .mouth:before {
+  content: ' ';
+  display: block;
+  background: #fff;
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+}
+
+.casper-body .body .feet {
+  position: absolute;
+  display: flex;
+  bottom: -18px;
+  width: 180px;
+}
+
+.casper-body .body .feet > div {
+  content: ' ';
+  width: 36px;
+  height: 36px;
+  background: #f2fbf1;
+  border-radius: 50%;
+}
+
+.shadow {
+  position: absolute;
+  bottom: -20px;
+  left: 3%;
+  transform: translateX(-50%);
+  background: #252c49;
+  width: 170px;
+  height: 30px;
+  border-radius: 50%;
+  animation: zoomy 2s infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes zoomy {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+}
