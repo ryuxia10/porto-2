@@ -10,6 +10,13 @@ import SvgPagination from "../ui/SvgPagination"; // <-- IMPORT BARU
 // ... (const projectData dan variants tetap sama) ...
 const projectData = [
   {
+    title: "Zyngra POS",
+    tags: ["dashboard", "typescript", "pos", "backend"],
+    bgImage: "/projects/zy01.png",
+    charImage: "/projects/zy01-1.png",
+    link: "https://zyngra.vercel.app/",
+  },
+  {
     title: "Portofolio 1.0",
     tags: ["react.js", "javascript", "motion-framer", "anime"],
     bgImage: "/projects/bg-1.png",
