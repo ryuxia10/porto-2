@@ -12,7 +12,7 @@ const AnimatedTitle = ({ text, className }) => {
           x="50%" 
           y="50%" 
           dy=".35em" 
-          text-anchor="middle"
+          textAnchor="middle"
         >
           {text}
         </text>

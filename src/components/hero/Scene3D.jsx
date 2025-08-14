@@ -6,9 +6,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Sparkles } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { gsap } from 'gsap';
+import { usePerfBudget } from '@/hooks/usePerfBudget';
 import { useGSAP } from '@gsap/react';
 
 const BookModel = () => {
+  const { intensity, reduced, scale } = usePerfBudget();
   // Pastikan path ini benar sesuai nama file 3D-mu
   const { scene } = useGLTF('/tongkat_sihir.glb'); 
   const modelRef = useRef();
@@ -52,8 +54,10 @@ const BookModel = () => {
 };
 
 export const Scene3D = () => {
+  const { intensity, reduced, scale } = usePerfBudget();
+
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+    <Canvas dpr={[1, 1.5]} gl={{ antialias: false, powerPreference: 'low-power' }} shadows={false} frameloop='always' camera={{ position: [0, 0, 5], fov: 75 }}>
       <ambientLight intensity={1.5} />
       <directionalLight 
         position={[3, 3, 5]} 
@@ -61,12 +65,12 @@ export const Scene3D = () => {
         color="#FFD700" 
       />
       
-      <Sparkles count={150} scale={8} size={1.2} speed={0.4} color="#FFD700" />
+      <Sparkles count={Math.max(20, Math.round(150 * (intensity || 0.6)))} scale={8} size={1.2} speed={0.4} color="#FFD700" />
       <BookModel />
 
       <EffectComposer>
         <Bloom 
-          intensity={1.5}
+          intensity={Math.max(0.05, 1.5 * (intensity || 0.6))}
           luminanceThreshold={0.2}
           luminanceSmoothing={0.9}
           height={500}

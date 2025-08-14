@@ -1,0 +1,7 @@
+node_modules
+*.psd
+*.zip
+**/*.glb.backup
+dist-*
+*.log
+*.map

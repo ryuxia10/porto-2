@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
       </div>
       {/* Tampilkan karakter hanya jika ada link (sudah deploy) */}
       {project.link && (
-        <img src={project.charImage} className="character" alt={`Character for ${project.title}`} />
+        <img src={project.charImage} className="character" alt={`Character for ${project.title}`} loading="lazy" decoding="async" fetchPriority="low" />
       )}
     </div>
   );
