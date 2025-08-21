@@ -65,6 +65,13 @@ const projectData = [
     link: "https://sql-garden-app.vercel.app/",
   },
   {
+    title: "SDLC Learning",
+    tags: ["JS", "SDLC", "Learn"],
+    bgImage: "/projects/sdlc.png",
+    charImage: "/projects/sdlcico.png",
+    link: "https://sdlc-game.vercel.app/",
+  },
+  {
     title: "Minibar 2.0",
     tags: ["3d", "UI/UX", "react.js", "cafe"],
     bgImage: "/projects/bg-7.png",
