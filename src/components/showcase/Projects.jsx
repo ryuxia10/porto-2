@@ -5,9 +5,8 @@ import AnimatedTitle from "../ui/AnimatedTitle";
 import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Projects.css";
-import SvgPagination from "../ui/SvgPagination"; // <-- IMPORT BARU
+import SvgPagination from "../ui/SvgPagination"; 
 
-// ... (const projectData dan variants tetap sama) ...
 const projectData = [
   {
     title: "Zyngra POS",
@@ -57,6 +56,13 @@ const projectData = [
     bgImage: "/projects/bg-6.png",
     charImage: "/projects/c-6.png",
     link: "https://ryuxia-pos.vercel.app/",
+  },
+  {
+    title: "SQL Learning",
+    tags: ["JS", "Database", "SQL", "Learn"],
+    bgImage: "/projects/sql.png",
+    charImage: "/projects/sqllogo.png",
+    link: "https://sql-learning.vercel.app/",
   },
   {
     title: "Minibar 2.0",
