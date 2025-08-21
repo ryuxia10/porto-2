@@ -62,7 +62,7 @@ const projectData = [
     tags: ["JS", "Database", "SQL", "Learn"],
     bgImage: "/projects/sql.png",
     charImage: "/projects/sqllogo.png",
-    link: "https://sql-learning.vercel.app/",
+    link: "https://sql-garden-app.vercel.app/",
   },
   {
     title: "Minibar 2.0",
